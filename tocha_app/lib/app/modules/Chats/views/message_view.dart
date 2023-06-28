@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 
 import '../controllers/chats_controller.dart';
 
-class MessagesStream extends GetView<ChatsController> {
-  const MessagesStream({Key? key});
+class MessageView extends GetView<ChatsController> {
+  const MessageView({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +37,7 @@ class MessagesStream extends GetView<ChatsController> {
         for (var message in messages) {
           final messageSenderUid = message['senderUid'] as String?;
           final messageSenderEmail = message['senderEmail'] as String?;
+
           final messageText = message['text'] as String?;
 
           if (messageSenderUid == currentUserUid) {

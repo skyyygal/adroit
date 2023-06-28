@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:tocha_app/app/modules/Dashboard/controllers/dashboard_controller.dart';
 
 import '../controllers/todos_controller.dart';
@@ -139,7 +140,23 @@ class TodosView extends GetView<TodosController> {
                                 todo.title,
                                 style: const TextStyle(color: Colors.black87),
                               ),
-                              subtitle: Text(todo.description),
+                              subtitle: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(todo.description),
+                                  Text(
+                                    DateFormat('MMM dd, yyyy')
+                                        .format(todo.dateTime),
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
+                                ],
+                              ),
+                              trailing: IconButton(
+                                icon: const Icon(Icons.edit),
+                                onPressed: () {
+                                  _editTodo(todo);
+                                },
+                              ),
                             ),
                           ),
                         ),
@@ -160,6 +177,7 @@ class TodosView extends GetView<TodosController> {
             builder: (BuildContext context) {
               String title = '';
               String description = '';
+              DateTime dateTime = DateTime.now();
               return AlertDialog(
                 backgroundColor: Colors.black87,
                 shape: RoundedRectangleBorder(
@@ -210,6 +228,7 @@ class TodosView extends GetView<TodosController> {
                           _todosController.createTodos(
                             title,
                             description,
+                            dateTime,
                           );
                           Get.back();
                         },
@@ -244,5 +263,61 @@ void _viewTodosDetails(Todos todo) {
         ),
       ],
     ),
+  );
+}
+
+void _editTodo(Todos todo) {
+  String updatedTitle = todo.title;
+  String updatedDescription = todo.description;
+
+  final TodosController _todosController = Get.find<TodosController>();
+
+  Get.defaultDialog(
+    title: 'Edit Todo',
+    content: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TextField(
+            style: const TextStyle(color: Colors.grey),
+            controller: TextEditingController(text: updatedTitle),
+            onChanged: (value) => updatedTitle = value,
+            decoration: const InputDecoration(
+              hintText: 'Edit todo item',
+              hintStyle: TextStyle(color: Colors.white60),
+            ),
+          ),
+          TextField(
+            style: const TextStyle(color: Colors.grey),
+            controller: TextEditingController(text: updatedDescription),
+            onChanged: (value) => updatedDescription = value,
+            decoration: const InputDecoration(
+              hintText: 'Edit description',
+              hintStyle: TextStyle(color: Colors.white60),
+            ),
+          ),
+        ],
+      ),
+    ),
+    actions: [
+      ElevatedButton(
+        onPressed: () {
+          _todosController.editTodos(
+            todo.id,
+            updatedTitle,
+            updatedDescription,
+          );
+          Get.back();
+        },
+        child: const Text('Save'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          Get.back();
+        },
+        child: const Text('Cancel'),
+      ),
+    ],
   );
 }
