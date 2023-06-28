@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "22964837164",
+    "project_id": "todo-fapp",
+    "storage_bucket": "todo-fapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22964837164:android:2e8ae5a6ecc1e368126a89",
+        "android_client_info": {
+          "package_name": "com.example.tocha_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22964837164-d8kjq8omo0m63g2ti5e84tho05a4ei76.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tocha_app",
+            "certificate_hash": "05809309b9abfdb0cccb245f32b5c1710673644e"
+          }
+        },
+        {
+          "client_id": "22964837164-rsp5d2dblgfl45tppv7pp9sajvb4k1nq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZWw1M6PJUlcIpVYho6NBxiiyo_OpQO-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22964837164-na18jfarkruvc6helier7i8grmsaquei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
