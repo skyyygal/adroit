@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "22964837164-d8kjq8omo0m63g2ti5e84tho05a4ei76.apps.googleusercontent.com",
+          "client_id": "22964837164-51sfn225hv4t1bh6o7fvdc4m871a2q0t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.tocha_app",
-            "certificate_hash": "05809309b9abfdb0cccb245f32b5c1710673644e"
+            "certificate_hash": "e11085f507afe73b65c6fd1d495b9cb8a86eb11c"
           }
         },
         {

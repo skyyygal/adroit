@@ -23,15 +23,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -65,5 +59,27 @@ class DefaultFirebaseOptions {
     messagingSenderId: '22964837164',
     projectId: 'todo-fapp',
     storageBucket: 'todo-fapp.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCsMJr_tfBhOvhRRW91jLWkwgzN0sWl6x4',
+    appId: '1:22964837164:ios:bf08cf56e74a686b126a89',
+    messagingSenderId: '22964837164',
+    projectId: 'todo-fapp',
+    storageBucket: 'todo-fapp.appspot.com',
+    androidClientId: '22964837164-0bl70s117mhfvmbuketrn2e8achelrap.apps.googleusercontent.com',
+    iosClientId: '22964837164-tokhde69dlhdv7uvep51f0aegljocn1e.apps.googleusercontent.com',
+    iosBundleId: 'com.example.tochaApp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCsMJr_tfBhOvhRRW91jLWkwgzN0sWl6x4',
+    appId: '1:22964837164:ios:08204262102974d1126a89',
+    messagingSenderId: '22964837164',
+    projectId: 'todo-fapp',
+    storageBucket: 'todo-fapp.appspot.com',
+    androidClientId: '22964837164-0bl70s117mhfvmbuketrn2e8achelrap.apps.googleusercontent.com',
+    iosClientId: '22964837164-93iravva9l35bslfmm1rodtfi0bjsici.apps.googleusercontent.com',
+    iosBundleId: 'com.example.tochaApp.RunnerTests',
   );
 }

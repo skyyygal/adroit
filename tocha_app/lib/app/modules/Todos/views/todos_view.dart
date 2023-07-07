@@ -127,6 +127,7 @@ class TodosView extends GetView<TodosController> {
                                 onPressed: (_) =>
                                     _todosController.deleteTodos(todo.id),
                                 icon: Icons.delete,
+                                borderRadius: BorderRadius.circular(8),
                                 backgroundColor: Colors.red,
                               )
                             ],
